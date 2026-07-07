@@ -5,7 +5,6 @@ A minimal telescopic cascode operational transconductance amplifier (OTA), built
 This is intentionally a small, focused project — biasing is done with **ideal DC voltage/current sources** rather than a designed bias generator, which turns out to directly explain some of the measured non-idealities below (see PSRR).
 
 ## Topology
-
 Classic single-ended telescopic cascode, 9 transistors total, all in a TSMC 018 (0.18µm) process:
 
 | Device | Role | Size |
@@ -19,7 +18,6 @@ Classic single-ended telescopic cascode, 9 transistors total, all in a TSMC 018 
 Biasing: four ideal DC voltage sources (`V1`–`V4`: 1.859V, 1.509V, 0.639V, 1.385V) set the cascode gate biases, `V6` = 0.9V sets the input common-mode, `V7` = 2.5V is the supply, and `I1` = 5µA sets the tail reference. Load capacitor `C1` = 2p.
 
 ## Tests Conducted
-
 | Test | Command | Result |
 |---|---|---|
 | Operating point | `.op` | Baseline bias check |
@@ -29,16 +27,15 @@ Biasing: four ideal DC voltage sources (`V1`–`V4`: 1.859V, 1.509V, 0.639V, 1.3
 | Transient step response | `V5` = PULSE(0 0.2 1u 10n 10n 8u 20u), `.tran 0 8u 0 1n` | Step response / settling behavior at the input |
 
 ## Repository Structure
-
 ```
-9T-Telescopic-Cascode-OTA/
+9-Transistor-Telescopic-Cascode-OTA/
 ├── README.md
 │
-├── schematics/
-│   └── 9-Transistor_Telescopic_Cascode_OTA.asc
+├── Schematic/
+│   └── 9-Transistor Telescopic Cascode OTA.asc
 │
-└── tests/
-    ├── operating_point/         # screenshot + netlist
+└── Tests/
+    ├── operating_point/         # screenshots
     ├── ac_response_gain_pm_gbw/
     ├── cmrr/
     ├── psrr/
